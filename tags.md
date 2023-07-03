@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: Topics
 layout: tags
 permalink: /tags/
 show_excerpts: true
