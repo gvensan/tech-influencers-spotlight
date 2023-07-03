@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Giri Venkatesan
-excerpt: Talks about #apis, #serverless, #integration, #cloudcomputing, and #eventdrivenarchitecture
+excerpt: "Talks about #apis, #serverless, #integration, #cloudcomputing, and #eventdrivenarchitecture"
 about: "A proven software and technology expert, I have led the design and implementation of multiple innovative, engineering efforts around product development, data and integration projects and built a strong team of engineers to provide engineering and professional expertise. Areas of expertise include strategy, product management and development go-to-market strategy, and services.
 
 A Technical Leader, Expert problem solver, and Solution Thinker."
