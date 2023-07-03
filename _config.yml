@@ -20,7 +20,7 @@ locale: en-US
 title: "Spotlight"
 description: "Top Tech Influencers"
 # baseurl: # the subpath of your site, e.g. "/blog"
-url: "https://jordanlevi.blog"
+# url: "https://jordanlevi.blog"
 logo: "/assets/images/Influencers Logo.png"
 linkedin_title: "LinkedIn"
 linkedin_logo: "/assets/images/LinkedIn Logo.png"
