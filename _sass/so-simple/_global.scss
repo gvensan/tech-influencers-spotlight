@@ -67,8 +67,18 @@
 
 .masthead {
   @include clearfix;
-  margin-bottom: 3em;
+  // margin-bottom: 1em;
   text-align: center;
+  top: unset;
+  bottom: 7px;
+  right: 10px;
+  position: fixed;
+
+  @include breakpoint($medium) {
+    top: 3px;
+    bottom: unset;
+  }
+
 }
 
 .site-title {
@@ -94,24 +104,23 @@
   display: inline-block;
   position: relative;
   z-index: 10;
+  // opacity: 0.35;
 }
 
 .site-logo-img {
-  width: $site-logo-width;
-  height: $site-logo-height;
-  border: 5px solid;
-  border-radius: $site-logo-width;
+  width: 1.5*$site-logo-width;
+  height: 1.5*$site-logo-height;
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   @include breakpoint($medium) {
-    width: 1.5 * $site-logo-width;
-    height: 1.5 * $site-logo-height;
-    border-radius: 1.5 * $site-logo-width;
+    width: 1.75 * $site-logo-width;
+    height: 1.75 * $site-logo-height;
   }
 
   @include breakpoint($large) {
     width: 2 * $site-logo-width;
     height: 2 * $site-logo-height;
-    border-radius: 2 * $site-logo-width;
   }
 }
 
@@ -124,7 +133,7 @@
 .e-excerpt {
   font-style: italic;
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .e-about {
@@ -134,8 +143,9 @@
 
 .social-presence {
   display: flex;
-  justify-content: flex-end;
-  margin: 1em;
+  justify-content: center;
+  margin-top: 1em;
+  // margin-bottom: 2em;
   gap: 1em;
   a {
     text-decoration: none;
@@ -144,12 +154,54 @@
 
 .social-logo-img {
   width: $social-logo-width;
-  height: $social-logo-width;
+  height: $social-logo-height;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  @include breakpoint($medium) {
+    width: 1.5 * $social-logo-width;
+    height: 1.5 * $social-logo-height;
+  }
+
+  @include breakpoint($large) {
+    width: 2 * $social-logo-width;
+    height: 2 * $social-logo-height;
+  }
 }
 
-.social-large-logo-img {
-  width: $social-large-logo-width;
-  height: $social-large-logo-width;
+.social-logo-img-entry {
+  width: 0.75 * $social-logo-width;
+  height: 0.75 * $social-logo-height;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  @include breakpoint($medium) {
+    width: 1 * $social-logo-width;
+    height: 1 * $social-logo-height;
+  }
+
+  @include breakpoint($large) {
+    width: 1.25 * $social-logo-width;
+    height: 1.25 * $social-logo-height;
+  }
+}
+
+.social-logo-img-small {
+  width: 0.75 * $social-logo-width;
+  height: 0.75 * $social-logo-height;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 0.2em;
+
+  @include breakpoint($medium) {
+    width: 1 * $social-logo-width;
+    height: 1 * $social-logo-height;
+  }
+
+  @include breakpoint($large) {
+    width: 1.25 * $social-logo-width;
+    height: 1.25 * $social-logo-height;
+  }
 }
 
 .site-footer {
@@ -387,4 +439,9 @@
       list-style-type: lower-roman;
     }
   }
+}
+
+hr.solid {
+  width: 100%;
+  border-top: 2px solid #bbb;
 }

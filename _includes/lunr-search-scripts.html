@@ -48,8 +48,10 @@
         this.use(lunr.{{ lang }});
       {% endunless %}
       // the, the normal lunr index initialization
+      this.field('type')
       this.field('title')
       this.field('excerpt')
+      this.field('about')
       this.field('categories')
       this.field('tags')
       this.ref('id')
@@ -59,8 +61,10 @@
       // add documents to index
       for (var item in store) {
         this.add({
+          type: store[item].type,
           title: store[item].title,
           excerpt: store[item].excerpt,
+          about: store[item].about,
           categories: store[item].categories,
           tags: store[item].tags,
           id: item
@@ -68,8 +72,9 @@
       }
     });
 
-    console.log(jQuery.type(idx));
-    console.log(store);
+    // console.log(jQuery.type(idx));
+    // console.log(store);
+    console.log('IDX', idx);
 
     $(document).ready(function () {
       $('input#search').on('keyup', function () {
@@ -87,6 +92,7 @@
               }
             })
           });
+        console.log('RESULT', result);
         resultdiv.empty();
         resultdiv.prepend('<p class="results__found">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</p>');
         for (var item in result) {
@@ -94,11 +100,23 @@
           var searchitem =
             '<article class="entry">' +
               '<h3 class="entry-title">' +
-                '<a href="' + store[ref].url + '">' + store[ref].title + '</a>' +
+                '<a href="' + store[ref].url + '">';
+          if (store[ref].type === 'Company')
+            searchitem = searchitem + '<img src="{{ site.company_logo | relative_url }}" class="social-logo-img-entry animated fadeInDown" alt="{{ site.company_title }}">';
+          else if (store[ref].type === 'Commnunity')
+            searchitem = searchitem + '<img src="{{ site.community_logo | relative_url }}" class="social-logo-img-entry animated fadeInDown" alt="{{ site.community_title }}">';
+          else
+            searchitem = searchitem + '<img src="{{ site.person_logo | relative_url }}" class="social-logo-img-entry animated fadeInDown" alt="{{ site.person_title }}">';
+          searchitem = searchitem + ' ' + store[ref].title + '</a>' +
               '</h3>' +
-              '<div class="entry-excerpt">' +
-                '<p>' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
-              '</div>' +
+              (store[ref].excerpt ?
+                '<div class="entry-excerpt">' +
+                  '<p>' + store[ref].excerpt.split(" ").splice(0, 90).join(" ") + '...</p>' +
+                '</div>' :
+                '<div class="entry-excerpt">' +
+                  '<p>' + store[ref].about.split(" ").splice(0, 90).join(" ") + '...</p>' +
+                '</div>'
+              ) +
             '</article>';
           resultdiv.append(searchitem);
         }

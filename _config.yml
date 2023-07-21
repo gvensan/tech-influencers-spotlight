@@ -21,13 +21,23 @@ title: "Spotlight"
 description: "Top Tech Influencers"
 # baseurl: # the subpath of your site, e.g. "/blog"
 url: "https://gvensan.github.io/"
-logo: "/assets/images/Influencers Logo.png"
+logo: "/assets/images/Influencers.png"
 linkedin_title: "LinkedIn"
-linkedin_logo: "/assets/images/LinkedIn Logo.png"
+linkedin_logo: "/assets/images/LinkedIn.png"
 twitter_title: "Twitter"
-twitter_logo: "/assets/images/Twitter Logo.png"
+twitter_logo: "/assets/images/Twitter.png"
 youtube_title: "YouTube"
-youtube_logo: "/assets/images/YouTube Logo.png"
+youtube_logo: "/assets/images/YouTube.png"
+github_title: "GitHub"
+github_logo: "/assets/images/GitHub.png"
+blog_title: "Blog"
+blog_logo: "/assets/images/Blog.png"
+person_title: "Blog"
+person_logo: "/assets/images/Person.png"
+company_title: "Blog"
+company_logo: "/assets/images/Company.png"
+community_title: "Blog"
+community_logo: "/assets/images/Group.png"
 date_format: "%B %-d, %Y"
 read_time: false
 words_per_minute: 265
@@ -71,7 +81,9 @@ tag_archive_path: "/tags/#"
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
+exclude:
+  - populator/
+  - node_modules/
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
